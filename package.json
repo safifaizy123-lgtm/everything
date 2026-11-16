@@ -1,0 +1,8 @@
+{
+  "name": "product-suite-local",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-first demo dashboard for building and selling digital products and AI services.",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

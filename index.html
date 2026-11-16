@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0a10">
+  <title>Product Suite</title>
+  <script>
+    try { const t=localStorage.getItem("ps-theme"); if(t==="light") document.documentElement.dataset.theme="light"; } catch {}
+  </script>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">P</div><div><b>Product Suite</b><small>Make it, sell it, get clients</small></div></div>
+      <nav id="nav">
+        <button class="nav-link active" data-page="home"><span>⌂</span> Home</button>
+        <button class="nav-link" data-page="unibox"><span>▣</span> Unibox <i class="count" id="unreadCount">4</i></button>
+        <button class="nav-link" data-page="settings"><span>⚙</span> Settings</button>
+        <div class="nav-label">DIGITAL PRODUCT</div>
+        <select id="productFormat" class="nav-select" aria-label="Product format"><option value="ebook">▤ &nbsp; Ebook</option><option value="course">▣ &nbsp; Course</option><option value="coaching">◷ &nbsp; Coaching</option></select>
+        <button class="nav-link sub active" data-page="build"><span class="step-num">1</span> Build it</button>
+        <button class="nav-link sub" data-page="buyers"><span class="step-num">2</span> Find buyers &amp; send</button>
+        <button class="nav-link sub" data-page="launch"><span class="step-num">3</span> Launch</button>
+        <div class="nav-label">AI SIDE HUSTLES</div>
+        <select id="hustleSelect" class="nav-select" aria-label="Side hustle"><option value="airbnb">▧ &nbsp; Airbnb Photos</option><option value="ads">▣ &nbsp; Ad Remakes</option><option value="shorts">▶ &nbsp; YouTube Shorts</option></select>
+        <button class="nav-link sub" data-page="hustle-work"><span class="step-num">1</span> Do the work</button>
+        <button class="nav-link sub" data-page="hustle-clients"><span class="step-num">2</span> Find clients &amp; send</button>
+        <button class="nav-link sub" data-page="get-paid"><span class="step-num">3</span> Get paid</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mode-switch"><button class="mode active" data-mode="demo">Demo</button><button class="mode" data-mode="live">Live</button></div>
+        <button class="btn money full" id="runLiveDemo">▶ &nbsp; Run live demo</button>
+        <div class="side-actions"><button class="btn tiny" id="loadAll">Load all</button><button class="btn tiny" id="saveDemo">Saved</button></div>
+        <div class="spend-note"><span class="dot green"></span><span id="modeNote">Demo, nothing spent</span><b>$0.00</b></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="path-progress"><span id="pathText">Your path: 2 of 4 done</span><div class="path-dots"><i class="done">✓</i><i class="current"></i><i></i><i></i></div></div>
+        <div class="top-actions"><button class="btn subtle" id="hustleOverview">3 side hustles</button><button class="btn subtle" id="themeToggle">☼ <span>Light</span></button><button class="btn subtle mobile-only" id="logToggle">Activity</button></div>
+      </header>
+      <div class="content" id="content"></div>
+    </main>
+
+    <aside class="activity" id="activity">
+      <div class="activity-head"><div><span class="eyebrow">LIVE ACTIVITY</span><h3>What the app did</h3></div><span class="live-dot"></span></div>
+      <div class="mini-stats"><div><small>Words written</small><b id="wordCount">3,842</b></div><div><small>Searches and runs</small><b id="runCount">18</b></div></div>
+      <div class="tool-status"><button class="tool-status-head" id="toolsToggle"><span>Tools connected</span><b>6 of 9⌄</b></button><div id="toolStatusList" class="tool-list hidden"><span>● Claude <em>Demo</em></span><span>● Apify <em>Demo</em></span><span>● Higgsfield <em>Demo</em></span><span>● AI Ark <em>Demo</em></span><span>● Instantly <em>Demo</em></span><span>● Whop <em>Demo</em></span><span>○ Nano Banana <em>Not added</em></span><span>○ Spaceship <em>Not added</em></span><span>○ ScaledMail <em>Not added</em></span></div></div>
+      <div class="activity-feed"><div class="feed-title">RECENT ACTIVITY</div><div id="activityItems"></div></div>
+      <div class="safety-card"><b>Built-in safety</b><p>✓ Nothing sends or posts without your yes</p><p>✓ Every cost is shown before it runs</p><p>✓ Your keys stay on this computer</p></div>
+      <div class="helper-status" id="helperStatus"><span class="dot green"></span> Local helper is running</div>
+    </aside>
+  </div>
+  <div class="toast" id="toast"></div>
+  <div class="modal-backdrop hidden" id="modalBackdrop"><section class="modal" id="modal"></section></div>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: product-suite-preview
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: APP_USER
+        value: owner
+      - key: APP_PASSWORD
+        sync: false
